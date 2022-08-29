@@ -388,30 +388,23 @@
             <!-- Подпишитесь  subscribe -->
             <div class="subscribe-container">
                 <p class="subscribe-text">Подпишитесь на рассылку</p>
-                    <input 
-                    type="email" 
-                    class="subscribe-input" 
-                    name="user email"
-                    placeholder="E-mail">       
+                <form class="form-button ">
+                        <input type="email" class="subscribe-input" name="user email" placeholder="E-mail">
+                        <button type="submit" class="subscribe-button">
+                            Подписаться
+                            <svg class="subscribe-soc-icon" width="24" height="24">
+                                <use href="./images/symbol-defs icon-telegram.svg#icon-icon-send"></use>
+                            </svg>
+                        </button>
+                </form>
             </div>
-            <div class="subscribe-button-container" >
-                <button type="submit" class="subscribe-button">
-                    Подписаться
-                    <svg class="subscribe-soc-icon" width="24" height="24">
-                        <use href="./images/symbol-defs icon-telegram.svg#icon-icon-send"></use>
-                    </svg>
-                </button>
-            </div>
-                
-                
-           
         </div>
     </footer>
-    <div class="backdrop is-hidden " data-modal >
+    <div class="backdrop is-hidden" data-modal >
         <div class="modal-window">
             <button type="button" class="modal-close" data-modal-close>
-                <svg class="modal-window-icon" width="31" height="31">
-                    <use href="./images/symbol-defs close.svg#icon-close"></use>
+                <svg class="modal-window-icon" width="30" height="30">
+                    <use href="./images/symbol-defs icon close.svg#icon-close-black-18dp-2-1"></use>
                 </svg>
             </button>
             <p class="modal-title ">Оставьте свои данные, мы вам перезвоним</p>
@@ -458,7 +451,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="label-container">
+                <div class="label-area-container">
                     <label for="user-comment" class="modal-label">Коментарий</label>
                     <textarea class="area-container"
                     name="user-comment" 
@@ -474,7 +467,8 @@
                     name="user-polise"
                     value="true"
                     class="input-check visually-hidden"
-                    id="user-polise">
+                    id="user-polise"
+                    required>
                     <label for="user-polise" class="check-text">
                         <span class="check-span">
                             <svg class="check-icon" width="16" height="15">

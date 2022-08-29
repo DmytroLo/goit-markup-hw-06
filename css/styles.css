@@ -568,13 +568,19 @@ background-color: #188CE8;
     top: 8px;
     right: 8px;
     background: var(--background-color);
-    
+      
+ 
 }
 .modal-window-icon {
-    fill: var(--background-color);
+    fill: #000000;
     border: 1px solid var(--features-background-color);
     border-radius: 50%;
-    
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+.modal-close:hover .modal-window-icon {
+    fill: var(--accent-text-color);
 }
 .is-hidden {
     opacity: 0;
@@ -597,6 +603,7 @@ background-color: #188CE8;
 }
 .label-container {
 margin-bottom: 10px;
+
 }
 .modal-label {
     font-weight: 400;
@@ -604,6 +611,9 @@ margin-bottom: 10px;
     line-height: 1.16;
     letter-spacing: 0.01em;
     color: var(--secondary-text-color);
+    display: block;
+    margin-bottom: 4px;
+    
 }
 .input-container {
     position: relative;
@@ -613,7 +623,8 @@ margin-bottom: 10px;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .modal-input {
     width: 100%;
@@ -622,7 +633,8 @@ margin-bottom: 10px;
     border-radius: 4px;
     padding-left: 42px;
     outline-color: var(--accent-text-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:not(:focus):not(:required):valid {
@@ -632,18 +644,33 @@ margin-bottom: 10px;
     background-color: rgb(236, 181, 181);
 }
 
-.modal-input:focus + .modal-icon + .modal-window-icon {
-    fill: var(--accent-text-color);  
+.modal-input:focus-within + .modal-icon ,
+.modal-input:hover + .modal-icon {
+    fill: var(--accent-text-color);
+}
+.modal-input:hover {
+    border: 1px solid var(--accent-text-color);
 }
 .area-container {
     width: 100%;
     height: 120px;
+    padding-top: 15px;
+    padding-left: 16px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     resize: none;
     outline-color: var(--accent-text-color);
 }
-
+.area-container:focus-within::placeholder ,
+.area-container:hover::placeholder {
+       color:var(--accent-text-color) ;
+}
+.area-container:hover {
+    border: 1px solid var(--accent-text-color);
+}
+.area-container::placeholder {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
 .input-file {
     background: #FFFFFF;
     border-radius: 4px;
@@ -709,11 +736,9 @@ margin-bottom: 10px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } */
 .modal-button {
-    width: 89px;
-    height: 30px;
     font-weight: 700;
     font-size: 16px;
-    line-height: 1.88px;
+    line-height: 1.88;
     display: flex;
     align-items: center;
     text-align: center;
@@ -775,8 +800,7 @@ margin-bottom: 10px;
 } 
 /*------ Подпишитесь subscribe -----*/
 .subscribe-container {
-    margin-left: 93px;
-    
+   margin-left: 93px;    
 }
  .subscribe-text {
     font-weight: 700;
@@ -797,7 +821,8 @@ margin-bottom: 10px;
     resize: none;
     outline-color: var(--accent-text-color);
     background-color: var(--footer-hero-background-color);
-    
+    color: var(--background-color);
+    padding: 16px 15px;    
  }
 .subscribe-input::placeholder {
     font-weight: 400;
@@ -809,27 +834,24 @@ margin-bottom: 10px;
     color: rgba(255, 255, 255, 0.6);
     padding-left: 15px;
 }
-.subscribe-button-container {
+.form-button {
     display: flex;
-    margin-left: 12px;
-
 }
 .subscribe-button {
-    position: absolute;
-    margin-top:24px;
-    width: 200px;
-    height: 50px;
+    position: relative;
+    margin-left:12px;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content:space-evenly;
     letter-spacing: 0.06em;
     color: var(--background-color);
     background-color: var(--accent-text-color);
-    
+    padding-left: 29px;
+    padding-right: 62px;
+}
+.subscribe-soc-icon {
+    position: absolute;
+    margin-left: 10px;    
 }
     /* -------filter------ */
     
